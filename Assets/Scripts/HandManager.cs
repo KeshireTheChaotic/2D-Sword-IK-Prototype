@@ -1,59 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Moves an IK hand target toward the combat hotspot nearest the mouse.
+/// Kept as a Transform-driven IK target (no Rigidbody2D required).
+/// </summary>
 public class HandManager : MonoBehaviour
 {
-
-    Rigidbody2D handPhysics;
     public Transform[] targets;
     public float speed = 1f;
     public float minDistance = 0.05f;
 
-    Transform hilt;
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        handPhysics = GetComponent<Rigidbody2D>();
+        Camera activeCamera = Camera.main;
+        if (activeCamera == null || targets == null || targets.Length == 0)
+            return;
+
+        Transform closest = GetClosestTarget(activeCamera);
+        if (closest == null)
+            return;
+
+        Vector3 destination = closest.position;
+        Vector3 current = transform.position;
+        if ((destination - current).sqrMagnitude <= minDistance * minDistance)
+            return;
+
+        // The original code moved toward a normalized direction vector,
+        // not the destination world position. This caused incorrect targeting.
+        transform.position = Vector3.MoveTowards(current, destination, speed * Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private Transform GetClosestTarget(Camera activeCamera)
     {
-        Transform target = GetClosestTarget(targets);
-        Vector3 hand = transform.transform.position;
-        Vector3 targetDirection = (target.position - hand).normalized;
+        Vector3 mouse = activeCamera.ScreenToWorldPoint(Input.mousePosition);
+        Transform closest = null;
+        float bestDistance = float.PositiveInfinity;
 
-        if (Vector3.Distance(target.position, hand) > minDistance)
+        foreach (Transform candidate in targets)
         {
-            transform.position = Vector2.MoveTowards(hand, targetDirection, speed * Time.deltaTime);
-        }
-    }
+            if (candidate == null)
+                continue;
 
-    private void FixedUpdate()
-    {
-        //handPhysics.MovePosition(hand + targetDirection * speed * Time.fixedDeltaTime);
-
-    }
-
-    Transform GetClosestTarget(Transform[] targets)
-    {
-        Transform bestTarget = null;
-        float closestDistanceSqr = Mathf.Infinity;
-        Vector3 m = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        foreach (Transform potentialTarget in targets)
-        {
-            Vector3 directionToTarget = potentialTarget.position - m;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
+            float distance = (candidate.position - mouse).sqrMagnitude;
+            if (distance < bestDistance)
             {
-                closestDistanceSqr = dSqrToTarget;
-                bestTarget = potentialTarget;
+                bestDistance = distance;
+                closest = candidate;
             }
         }
 
-        return bestTarget;
+        return closest;
     }
 }

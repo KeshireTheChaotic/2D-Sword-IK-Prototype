@@ -1,55 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Mouse-facing 2D movement controller. Uses Unity's legacy Input Manager
+/// (Horizontal/Vertical axes), which is kept enabled during the upgrade.
+/// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovementController : MonoBehaviour
 {
-    Rigidbody2D body;
-    Vector3 m;
-    float horizontal;
-    float vertical;
-    float moveLimiter = 0.7f;
-    
-    //For inspector tweaking.
     public float runSpeed = 1.0f;
     public float turnSpeed = 1.0f;
 
-    void Start()
+    private Rigidbody2D body;
+    private Vector2 movement;
+
+    private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-        // Gives a value between -1 and 1
-        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
-        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        // Read input in Update, then apply it to physics in FixedUpdate.
+        // normalized prevents diagonal movement from exceeding runSpeed.
+        movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        movement = Vector2.ClampMagnitude(movement, 1f);
 
-        m = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 target = m-transform.position;
-        float angle = (Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg) + 90;
-        //turn slightly slower from front
-        if (Vector3.Dot(transform.up, target) < 0f)
-        {
-            transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.AngleAxis(angle, Vector3.forward), turnSpeed * 0.5f);
-        }
-        else
-        {
-            transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.AngleAxis(angle, Vector3.forward), turnSpeed);
-        }
-            
+        Camera activeCamera = Camera.main;
+        if (activeCamera == null)
+            return;
 
+        Vector3 mouseWorld = activeCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 target = mouseWorld - transform.position;
+        if (target.sqrMagnitude <= 0.000001f)
+            return;
 
+        float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg + 90f;
+        Quaternion desiredRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        float speedFactor = Vector3.Dot(transform.up, target) < 0f ? 0.5f : 1f;
+        transform.localRotation = Quaternion.RotateTowards(transform.localRotation, desiredRotation, turnSpeed * speedFactor);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (horizontal != 0 && vertical != 0) // Check for diagonal movement
-        {
-            // limit movement speed diagonally, so you move at 70% speed
-            horizontal *= moveLimiter;
-            vertical *= moveLimiter;
-        }
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        // Unity 6 uses Rigidbody2D.linearVelocity (formerly velocity).
+        body.linearVelocity = movement * runSpeed;
     }
 }
