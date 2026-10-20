@@ -537,8 +537,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6181300385887193387, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1270674930}
+    - targetCorrespondingSourceObject: {fileID: -3346276223636773435, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533236525}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+--- !u!4 &533236517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8162383718071358416, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+  m_PrefabInstance: {fileID: 533236516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &533236518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3346276223636773435, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+  m_PrefabInstance: {fileID: 533236516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &533236519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6181300385887193387, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+  m_PrefabInstance: {fileID: 533236516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &533236520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8648882755762834919, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+  m_PrefabInstance: {fileID: 533236516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &533236521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7902977062715314990, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+  m_PrefabInstance: {fileID: 533236516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &533236522 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8854889053627997875, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+  m_PrefabInstance: {fileID: 533236516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &533236523 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6594074206647689048, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+  m_PrefabInstance: {fileID: 533236516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &533236524 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3145156481106359500, guid: cad30e3c062f4e34bbacda9ea2ba2cbd, type: 3}
+  m_PrefabInstance: {fileID: 533236516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &533236525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533236518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484718f2c4ab849829491782b508958a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotationLimitHinge
+  axis: {x: 0, y: 0, z: 1}
+  defaultLocalRotation: {x: 0, y: 0, z: -0.0069616535, w: 0.9999758}
+  useLimits: 1
+  min: -50
+  max: 110
+  zeroAxisDisplayOffset: 180
 --- !u!1 &750421341
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,13 +667,13 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 0}
+    m_EffectorTransform: {fileID: 533236524}
     m_TargetTransform: {fileID: 1653822810}
-    m_TransformCount: 0
+    m_TransformCount: 3
     m_Transforms:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 533236523}
+    - {fileID: 533236517}
+    - {fileID: 533236524}
     m_DefaultLocalRotations:
     - {x: 0, y: 0, z: -0.0069616535, w: 0.9999758}
     - {x: 0, y: 0, z: 0.0055900966, w: 0.9999844}
@@ -762,17 +826,17 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 0}
+    m_EffectorTransform: {fileID: 533236521}
     m_TargetTransform: {fileID: 492349167}
-    m_TransformCount: 0
+    m_TransformCount: 3
     m_Transforms:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 533236520}
+    - {fileID: 533236522}
+    - {fileID: 533236521}
     m_DefaultLocalRotations:
-    - {x: 0, y: 0, z: -0.007809013, w: 0.99996954}
-    - {x: 0, y: 0, z: 0.0010096271, w: 0.9999995}
-    - {x: -0, y: -0, z: -0.0005281279, w: 0.9999999}
+    - {x: 0, y: 0, z: -0.007164754, w: 0.99997437}
+    - {x: 0, y: 0, z: -0.00017855002, w: 1}
+    - {x: 0, y: 0, z: 0.000015747468, w: 1}
     m_StoredLocalRotations:
     - {x: 0, y: 0, z: 0, w: 0}
     - {x: 0, y: 0, z: 0, w: 0}
@@ -794,6 +858,24 @@ Transform:
   - {fileID: 492349167}
   m_Father: {fileID: 1596640858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1270674930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533236519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484718f2c4ab849829491782b508958a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotationLimitHinge
+  axis: {x: 0, y: 0, z: 1}
+  defaultLocalRotation: {x: 0, y: 0, z: -0.007164754, w: 0.99997437}
+  useLimits: 1
+  min: -110
+  max: 50
+  zeroAxisDisplayOffset: 180
 --- !u!850595691 &1578910902
 LightingSettings:
   m_ObjectHideFlags: 0

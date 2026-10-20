@@ -1,0 +1,580 @@
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 15252)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 10484)
+VBCSCompiler prewarm took 16.01 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.6/staging' branch; Version is '6000.6.6f1 (d20c9ac777da) revision 13765786'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Keshire" at "2026-10-20T18:01:55.2288441Z"
+OS: 'Windows 11  (10.0.26300) ProfessionalN' Language: 'en' Physical Memory: 31860 MB
+BatchMode: 0, IsHumanControllingUs: 1, StartBugReporterOnCrash: 1, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-20T18:01:55Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26504, path: "D:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              c8f5e3c40caa446a91642213b4ac0827
+  Correlation Id:          25e88e357d2b10b787c7447322e4ddf5
+  External correlation Id: 4181433707387472297
+  Machine Id:              PLlVUOCRR1H08zIYemNlH111JdQ=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Keshire" (connect: 0.00s, validation: 0.00s, handshake: 0.02s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Keshire-notifications" at "2026-10-20T18:01:55.2524302Z"
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated the access token 7fuknEls-0...
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2474095201044-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.03s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Unity.exe
+-projectpath
+D:\Library\Development\2D-Sword-IK-Prototype
+-acceptSoftwareTermsForThisRunOnly
+-useHub
+-hubIPC
+-cloudEnvironment
+production
+-licensingIpc
+LicenseClient-Keshire
+-hubSessionId
+fb7266af-4e01-4f16-8c8d-cb5e32073cc8
+-accessToken
+7fuknEls-0vz71Z88Rob-vm_kdAQDGkh-DmqHdYu1-w002f
+Successfully changed project path to: D:\Library\Development\2D-Sword-IK-Prototype
+D:/Library/Development/2D-Sword-IK-Prototype
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [16988]  Target information:
+
+Player connection [16988]  * "[IP] 192.168.68.59 [Port] 55504 [Flags] 2 [Guid] 2367231103 [EditorId] 2367231103 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KESHIRE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [16988] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [16988] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-23468" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Initialising UDS system complete:
+  - System type: Client
+  - Resource namespace: c4554c95f60dd5743cce13ef2004a63a
+  - Shared memory size: 1073741824
+  - Command buffer id: 1052576
+  - Command buffer size: 8192
+  - Hashmap size: 4194304
+  - Service connected: false
+Launching Unity Data Store - C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Tools/Unity.DataStore.exe 
+Unity Data Store artifact dir = Library/DataStore, working dir = D:/Library/Development/2D-Sword-IK-PrototypeSerialized file "ProjectSettings/ProjectSettings.asset" contains a PlayerSettings object at version 15, below the supported minimum (16). Open and re-save the file to upgrade.
+Serialized file "ProjectSettings/AudioManager.asset" contains a AudioManager object at version 1, below the supported minimum (2). Open and re-save the file to upgrade.
+Serialized file "ProjectSettings/DynamicsManager.asset" contains a PhysicsManager object at version 10, below the supported minimum (13). Open and re-save the file to upgrade.
+Unity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.6f1 (d20c9ac777da)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Library/Development/2D-Sword-IK-Prototype/Assets
+[D3D12 Device Filter] Vendor Name: ATI
+[D3D12 Device Filter] Device Name: AMD Radeon RX 6800 XT
+[D3D12 Device Filter] Driver Version: 32.0.21045.5002
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 16337 MB
+[D3D12 Device Filter] Processor Count: 8
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        AMD Radeon RX 6800 XT (ID=0x73bf)
+    Vendor:          ATI
+    VRAM:            16337 MB
+    App VRAM Budget: 15569 MB
+    Driver:          32.0.21045.5002
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56468
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001165 seconds.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.518 seconds
+Domain Reload Profiling: 932ms
+	BeginReloadAssembly (105ms)
+		CreateAndSetChildDomain (16ms)
+	RebuildCommonClasses (4ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (243ms)
+		LoadAssemblies (87ms)
+		TypeCache.Refresh (161ms)
+			TypeCache.ScanAssembly (150ms)
+		AnalyzeDomain (1ms)
+	FinalizeReload (519ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (27ms)
+			BeforeProcessingInitializeOnLoad (78ms)
+			ProcessInitializeOnLoadAttributes (106ms)
+			ProcessInitializeOnLoadMethodAttributes (147ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 23 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.2d.animation@16.0.1 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.animation@899988b542b9)
+    com.unity.2d.psdimporter@15.0.1 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.psdimporter@e02a9153d8d9)
+    com.unity.2d.common@15.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.common@b779c433ed47)
+    com.unity.nuget.mono-cecil@1.11.6 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+  Built-in packages:
+    com.unity.modules.animation@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.imageconversion@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.physics2d@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.ui@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.hierarchycore@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.modules.physics@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physicscore2d@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.2d.sprite@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.sprite@752945c75a6f)
+    com.unity.2d.tilemap@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.tilemap@f4c7bd71ac8a)
+    com.unity.collections@6.6.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.collections@10fff0607388)
+    com.unity.modules.tilemap@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.burst@2.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.burst@626e66ab421b)
+    com.unity.mathematics@1.4.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.mathematics@8306a64d0cd6)
+    com.unity.test-framework@1.8.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.test-framework@80f691d4262b)
+    com.unity.test-framework.performance@6.6.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.test-framework.performance@54c5bd86aedb)
+    com.unity.ext.nunit@2.1.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+[Package Manager] Done resolving packages in 1.00 seconds
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 23 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.2d.animation@16.0.1 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.animation@899988b542b9)
+    com.unity.2d.psdimporter@15.0.1 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.psdimporter@e02a9153d8d9)
+    com.unity.2d.common@15.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.common@b779c433ed47)
+    com.unity.nuget.mono-cecil@1.11.6 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+  Built-in packages:
+    com.unity.modules.animation@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.imageconversion@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.physics2d@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.ui@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.hierarchycore@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.modules.physics@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physicscore2d@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.2d.sprite@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.sprite@752945c75a6f)
+    com.unity.2d.tilemap@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.2d.tilemap@f4c7bd71ac8a)
+    com.unity.collections@6.6.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.collections@10fff0607388)
+    com.unity.modules.tilemap@1.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.burst@2.0.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.burst@626e66ab421b)
+    com.unity.mathematics@1.4.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.mathematics@8306a64d0cd6)
+    com.unity.test-framework@1.8.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.test-framework@80f691d4262b)
+    com.unity.test-framework.performance@6.6.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.test-framework.performance@54c5bd86aedb)
+    com.unity.ext.nunit@2.1.0 (location: D:\Library\Development\2D-Sword-IK-Prototype\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: D:/Library/Development/2D-Sword-IK-Prototype
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\DotNetSdk\dotnet.exe "C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: D:/Library/Development/2D-Sword-IK-Prototype
+ExitCode: 4 Duration: 0s83ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+*** Tundra requires additional run (0.02 seconds), 0 items updated, 81 evaluated
+ExitCode: 0 Duration: 0s410ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: D:/Library/Development/2D-Sword-IK-Prototype
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll"
+ExitCode: 0 Duration: 0s691ms
+Finished compiling graph: 511 nodes, 7205 flattened edges (6309 ToBuild, 64 ToUse), maximum node priority 280
+[316/508    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp
+[412/508    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[500/508    0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+[501/508    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll, with 148 defines and 285 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+1 processor(s) skipped this assembly
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+[502/508    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[503/508    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[504/508    0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[505/508    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 146 defines and 324 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+1 processor(s) skipped this assembly
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+[506/508    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[507/508    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (0.67 seconds), 10 items updated, 508 evaluated
+AssetDatabase: script compilation time: 1.536621s
+Begin MonoManager ReloadAssembly
+Total cache size 267676165
+Total cache size after purge 267676165, took 00:00:00.1202881
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.355 seconds
+Domain Reload Profiling: 770ms
+	BeginReloadAssembly (177ms)
+		DisableScriptedObjects (19ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (7ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (189ms)
+		LoadAssemblies (146ms)
+		TypeCache.Refresh (27ms)
+			TypeCache.ScanAssembly (23ms)
+		AnalyzeDomain (11ms)
+			BuildScriptInfoCaches (10ms)
+	FinalizeReload (355ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (79ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
+			AfterProcessingInitializeOnLoad (3ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Starting new worker id: 0 with log in D:/Library/Development/2D-Sword-IK-Prototype/Logs/AssetImportWorkerHW0.log
+
+Asset Pipeline Refresh (id=8a5f869590625454ba531b4320f38603): Total: 3.561 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=495 ms
+		Asset DB Callback time: managed=59 ms, native=1017 ms
+		Scripting: domain reloads=1, domain reload time=436 ms, compile time=1540 ms, other=11 ms
+		Project Asset Count: scripts=333, non-scripts=846
+		Asset File Changes: new=1, changed=4, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokePackagesCallback: 1014.472ms
+	ApplyChangesToAssetFolders: 0.276ms
+	Scan: 21.791ms
+	Collect global state as custom dependencies: 6.095ms
+	OnSourceAssetsModified: 0.606ms
+	CategorizeScriptCompilationAssets: 5.630ms
+	ProcessAssetsWithTransientArtifactChanges: 11.188ms
+	CategorizeAssets: 7.896ms
+	CompileScripts: 1540.451ms
+	ImportOutOfDateAssets: 366.730ms (357.263ms without children)
+		UnloadImportedAssets: 0.068ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.104ms
+		ImportSchedulerStart: 9.295ms
+	PostProcessAllAssets: 59.521ms
+		VCAutoAddAssetPostprocess 0.530ms
+		XRBuildSystem.XRAssetImported 0.078ms
+		MonoPostProcessAllAssets: 58.549ms
+			AssetPostprocessor.OnPostprocessAllAssets 19.584ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 6.243ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 5.753ms
+			AssetChangedListener.OnPostprocessAllAssets 5.277ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 4.237ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 1.711ms
+			ThemePostprocessor.OnPostprocessAllAssets 1.196ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 1.034ms
+			SyncVS.PostprocessSyncProject 0.979ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 0.901ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.695ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 0.581ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.387ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.357ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.216ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.208ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.188ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.175ms
+			SpriteLibraryAssetPostprocessor.OnPostprocessAllAssets 0.167ms
+			AssetEvents.OnPostprocessAllAssets 0.156ms
+			AssetProcessor.OnPostprocessAllAssets 0.148ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.137ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.112ms
+			PSDImportPostProcessor.OnPostprocessAllAssets 0.104ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.100ms
+			PSDImporterAssetPostProcessor.OnPostprocessAllAssets 0.074ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.071ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.058ms
+	PostAssetChangesProfiler: 3.978ms
+	UnloadStreamsBegin: 1.184ms
+	GenerateScriptTypeHashes: 1.583ms
+	GenerateScriptTypeSerializationHashes: 3.300ms
+	Untracked: 505.282ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 10.908ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-2D Prototype
+LightingSettings: switching bake backend from 2 to 1.
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/SampleScene.unity'
+	Deserialize:            1.646 ms
+	Integration:            53.095 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.013 ms
+	Total Operation Time:   54.755 ms
+Unloading 1276 unused Assets / (0.9 MB). Loaded Objects now: 2183.
+Memory consumption went from 260.8 MB to 259.9 MB.
+Total: 4.165900 ms (FindLiveObjects: 0.169200 ms CreateObjectMapping: 0.028500 ms MarkObjects: 3.565500 ms  DeleteObjects: 0.317000 ms)
+
+[LAYOUT] About to load UserSettings\Layouts\default-6000.dwlt, keepMainWindow=False
+[LAYOUT] About to save layout D:\Library\Development\2D-Sword-IK-Prototype\UserSettings\Layouts\default-6000.dwlt
+[LAYOUT] About to save layout C:/Users/Keshi/AppData/Roaming/Unity/Editor-5.x/Preferences\Layouts\current\default-6000.dwlt
+[MODES] ModeService[default].InitializeCurrentMode
+[MODES] ModeService[default].RaiseModeChanged(default, default)
+This project uses Input Manager, which is marked for deprecation. To manage input in your project, use the <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@latest">Input System package</a> instead.
+<RI> Initializing input.
+<RI> Input initialized.
+D3D11 device created for Microsoft Media Foundation video decoding.
+[Project] Loading completed in 6.062 seconds
+	Project init time: 				5.156 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.181 seconds
+		Asset Database init time: 		0.147 seconds
+		Global illumination init time: 	0.002 seconds
+		Assemblies load time: 			0.960 seconds
+		Unity extensions init time: 	0.003 seconds
+		Asset Database refresh time: 	3.561 seconds
+	Scene opening time: 			0.756 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1792519321268,"processId":23468,"projectLoad":6.0618571,"projectInit":5.1555828,"templateInit":0.0,"packageManagerInit":0.1811396,"assetDatabaseInit":0.1472004,"globalIlluminationInit":0.0017001,"assembliesLoad":0.9598681,"unityExtensionsInit":0.0027214,"assetDatabaseRefresh":3.5614602,"sceneOpening":0.7560651}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1792519321268,"processId":23468,"editorVersion":"6000.6.6f1 (d20c9ac777da)","branch":"6000.6/staging","buildType":"Release","platform":"Windows"}
+[Licensing::Client] Successfully resolved entitlement details
+Worker ready: AssetImportWorkerHW0 0
+Start Indexing on Editor startup
+[Indexing] Starting Initial Indexing for Assets
+Asset Pipeline Refresh (id=a0d63ad82667ec740b916b49abc81246): Total: 0.024 seconds - Initiated by RefreshV2(AllowForceSynchronousImport)
+Created GICache directory at C:/Users/Keshi/AppData/LocalLow/Unity/Caches/GiCache. Took: 0.006s, timestamps: [6.658 - 6.663]
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "7fuknEls"... (expires: 2026-10-20T19:46:56Z)
+Starting new worker id: 1 with log in D:/Library/Development/2D-Sword-IK-Prototype/Logs/AssetImportWorkerHW1.log
+[Worker0] Imported GUID: d708c72db0e4a374ab0b18f678e1cdbb - Path: Assets/Scenes/SampleScene.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B -> (ImportResultId: 'f133aab535d7f9158dcbe1b91e09dc27') in 0.0608483 seconds
+[Worker0] Imported GUID: c85034b9e7d567a48983f8d4d78b0c22 - Path: Assets/Scripts/HandManager.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B -> (ImportResultId: 'b1b276cec71259da9c53725548d015fd') in 0.0224481 seconds
+[Worker0] Imported GUID: 181f3e93b3cb41b79578729322115911 - Path: Assets/Editor/SwordIKUpgradeValidation.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B -> (ImportResultId: '3064af4ff0cb79582f8cfbba74e0edd4') in 0.0011087 seconds
+[Worker0] Imported GUID: 2e674e594db62c34aa8136335392e94a - Path: Assets/Scripts/PlayerMovementController.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B -> (ImportResultId: 'd6ce868345429f2a155a69536e49e8c2') in 0.0007468 seconds
+[Worker0] Imported GUID: 39ea4d2e00c941f8b740182024912a3d - Path: Assets/Editor/SwordIKChainRepair.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B -> (ImportResultId: 'e1f549a71cb6f6a27d8b4237d8bc2ebf') in 0.0007729 seconds
+[Licensing::Client] Successfully resolved entitlement details
+Project ID request failed, Reason: The requested URL returned error: 403 (403).
+Unknown Unity Connect error (400). Please contact support at support@unity.com while processing request "https://services.unity.com/api/unity/legacy/v1/projects/c1d8ac4f-2ef8-49ec-9d6d-0f6216e8d7e2", HTTP error code 403
+.Asset Pipeline Refresh (id=cdd3f5cfe6c83274180adc11b839e7dd): Total: 0.004 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+SpriteAtlasPacking completed in 0.005364 sec
+Reloading assemblies for play mode.
+Reloading assemblies after forced synchronous recompile.
+Begin MonoManager ReloadAssembly
+Worker ready: AssetImportWorkerHW1 1
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.927 seconds
+Domain Reload Profiling: 3194ms
+	BeginReloadAssembly (2123ms)
+		DisableScriptedObjects (81ms)
+		CreateAndSetChildDomain (67ms)
+	RebuildCommonClasses (7ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (95ms)
+		LoadAssemblies (76ms)
+		TypeCache.Refresh (3ms)
+		AnalyzeDomain (2ms)
+	FinalizeReload (928ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (55ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
+			AfterProcessingInitializeOnLoad (3ms)
+		AwakeInstancesAfterBackupRestoration (492ms)
+No restricted APIs configured; Validation skipped.
+Checking 6 assemblies for restricted APIs found 0 usage(s) in 2 ms
+
+Asset Pipeline Refresh (id=f25ecddd08252574d83c2295cbb22a3e): Total: 3.341 seconds - Initiated by StopAssetImportingV2(ForceSynchronousImport | ForceDomainReload)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=987 ms
+		Asset DB Callback time: managed=37 ms, native=28 ms
+		Scripting: domain reloads=1, domain reload time=2286 ms, compile time=1 ms, other=0 ms
+		Project Asset Count: scripts=333, non-scripts=846
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokePackagesCallback: 0.820ms
+	ApplyChangesToAssetFolders: 0.066ms
+	Collect global state as custom dependencies: 0.441ms
+	ProcessAssetsWithTransientArtifactChanges: 20.178ms
+	CategorizeAssets: 6.096ms
+	CompileScripts: 1.477ms
+	ImportOutOfDateAssets: 931.386ms (929.085ms without children)
+		UnloadImportedAssets: 1.935ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.114ms
+		ImportSchedulerStart: 0.239ms
+	PostProcessAllAssets: 57.063ms
+		PostProcessCallbackCreateDeferredMaterials 2.288ms
+		AssemblyValidation.PostprocessAllAssets 1.925ms
+		PostprocessAssetsUpdateCachedIcon 1.639ms
+		ShaderAssetModifiedCallback 1.196ms
+		RaytracingShaderImportPostprocess 0.752ms
+		ComputeShaderImportPostprocess 0.739ms
+		SpeedTreeImporter.PostprocessAllAssets 0.650ms
+		LocalizationDatabase.AssetDatabasePostprocessCallback 0.372ms
+		BlockShaderImporter.PostprocessAllAssets 0.317ms
+		XRBuildSystem.XRAssetImported 0.086ms
+		MonoPostProcessAllAssets: 36.220ms
+			AssetPostprocessor.OnPostprocessAllAssets 6.372ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 3.911ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 3.837ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 3.492ms
+			AssetChangedListener.OnPostprocessAllAssets 2.688ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 2.667ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 1.000ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 0.988ms
+			SyncVS.PostprocessSyncProject 0.751ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.429ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.347ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.217ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 0.205ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.196ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.195ms
+			SpriteLibraryAssetPostprocessor.OnPostprocessAllAssets 0.161ms
+			AssetEvents.OnPostprocessAllAssets 0.147ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.130ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.118ms
+			PSDImportPostProcessor.OnPostprocessAllAssets 0.112ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.111ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.109ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.109ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.092ms
+			PSDImporterAssetPostProcessor.OnPostprocessAllAssets 0.070ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.063ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.056ms
+	PostAssetChangesProfiler: 8.690ms
+	GenerateScriptTypeHashes: 0.664ms
+	GenerateScriptTypeSerializationHashes: 1.361ms
+	Untracked: 2303.790ms
+
+LightingSettings: switching bake backend from 2 to 1.
+AudioListener component deleted: Component belongs to a disabled built-in package.
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            1.314 ms
+	Integration:            18.200 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.009 ms
+	Total Operation Time:   19.525 ms
+[Licensing::Client] Successfully resolved entitlement details
+TrimDiskCacheJob: Current cache size 0mb
+LightingSettings: switching bake backend from 2 to 1.
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            1.038 ms
+	Integration:            10.760 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.008 ms
+	Total Operation Time:   11.808 ms
+Unloading 1170 unused Assets / (18.0 MB). Loaded Objects now: 3361.
+Memory consumption went from 442.4 MB to 424.4 MB.
+Total: 9.099600 ms (FindLiveObjects: 0.393700 ms CreateObjectMapping: 0.038500 ms MarkObjects: 6.354300 ms  DeleteObjects: 2.224000 ms)
+
+[Licensing::Client] Successfully resolved entitlement details
+MonoPathRemapper: Attempts to remap: 15758; Successful remaps: 5656
+Serialized file version minimum: 23, current 23
+[LAYOUT] About to save layout D:\Library\Development\2D-Sword-IK-Prototype\UserSettings\Layouts\default-6000.dwlt
+[LAYOUT] About to save layout C:/Users/Keshi/AppData/Roaming/Unity/Editor-5.x/Preferences\Layouts\current\default-6000.dwlt
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-Keshire-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-Keshire channel disconnected successfully.
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+Shut down UDS service system complete
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+abort_threads: Failed aborting id: 0000000000006368, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000069C8, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000006368, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000069C8, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 3708
+VBCSCompilerPreWarmer: requested VBCSCompiler shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1792519389129,"processId":23468,"allocatedMemory":15330756,"memoryLabels":[{"Default":173581},{"Permanent":15516},{"NewDelete":72297},{"Thread":4205600},{"Manager":2342525},{"VertexData":8},{"Geometry":816},{"Texture":24},{"Shader":844266},{"Material":132},{"GfxDevice":62208},{"Animation":952},{"Audio":32},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":17504},{"Input":42840},{"JobScheduler":256},{"TextLib":15858},{"Mono":48},{"ScriptingNativeRuntime":1222408},{"BaseObject":48912},{"Resource":1444},{"Renderer":2504},{"Transform":4685},{"File":13327},{"WebCam":616},{"Culling":32},{"Terrain":11442},{"Wind":24},{"STL":40},{"String":847576},{"StaticString":3808},{"Utility":2673882},{"Curl":1492},{"PoolAlloc":2696},{"AI":80},{"TypeTree":14973},{"ScriptManager":18984},{"CodeReload":448},{"RuntimeInitializeOnLoadManager":64},{"Sprites":102},{"SpriteAtlas":120},{"GI":7816},{"Director":8296},{"CloudService":7296},{"WebRequest":19465},{"VR":49650},{"SceneManager":608},{"Video":208},{"LazyScriptCache":32},{"Camera":335721},{"Secure":265},{"SerializationCache":9256},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":768},{"Hierarchy":1188},{"UIElements":40},{"CoreStats":14456},{"Identifiers":7152},{"Gui":267632},{"EditorUtility":205479},{"VersionControl":8},{"Undo":931},{"AssetDatabase":1313346},{"AssetImporter":40},{"EditorGi":328},{"UnityConnect":37750},{"Upm":1988},{"UpmDiagnostics":8},{"AssetCompliance":96},{"DrivenProperties":72},{"LocalIPC":264},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3600},{"Windowing":456},{"Licensing":12807},{"AssetReference":32},{"IPCStream":32}]}
