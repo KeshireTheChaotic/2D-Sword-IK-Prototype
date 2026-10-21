@@ -1,0 +1,14 @@
+{
+  "name": "CombatV3.PlayModeTests",
+  "references": ["CombatV3.Runtime"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

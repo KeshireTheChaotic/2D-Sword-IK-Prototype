@@ -221,9 +221,8 @@ public static class SwordIKChainRepair
             throw new InvalidOperationException("The player must have exactly two registered IK solvers.");
         ValidateChain(left, leftHand, FindUniqueDescendant(player.transform, "Left_IK_Target"));
         ValidateChain(right, rightHand, FindUniqueDescendant(player.transform, "Right_IK_Target"));
-        if (leftShoulder.GetComponent<RotationLimitHinge>() == null ||
-            rightShoulder.GetComponent<RotationLimitHinge>() == null)
-            throw new InvalidOperationException("The original shoulder hinge components are missing.");
+        ValidateHinge(leftShoulder, -110f, 50f);
+        ValidateHinge(rightShoulder, -50f, 110f);
         if (rig.GetComponentsInChildren<SpriteSkin>(true).Length < 2)
             throw new InvalidOperationException("PSB sprite skins were not imported. Check PSD Importer and Sprite.psb.");
 
@@ -235,6 +234,19 @@ public static class SwordIKChainRepair
                         ++missing;
         if (missing != 0)
             throw new InvalidOperationException("Missing MonoBehaviour references: " + missing);
+    }
+
+    private static void ValidateHinge(Transform shoulder, float expectedMin, float expectedMax)
+    {
+        RotationLimitHinge hinge = shoulder.GetComponent<RotationLimitHinge>();
+        if (hinge == null)
+            throw new InvalidOperationException("The original shoulder hinge component is missing from " + shoulder.name + ".");
+        if (!hinge.useLimits || hinge.axis != Vector3.forward ||
+            !Mathf.Approximately(hinge.min, expectedMin) || !Mathf.Approximately(hinge.max, expectedMax))
+        {
+            throw new InvalidOperationException(shoulder.name + " has malformed shoulder hinge settings. Expected axis (0, 0, 1), enabled limits "
+                + expectedMin + " to " + expectedMax + "; existing settings were preserved.");
+        }
     }
 
     private static void ValidateChain(LimbSolver2D solver, Transform expectedHand, Transform expectedTarget)
