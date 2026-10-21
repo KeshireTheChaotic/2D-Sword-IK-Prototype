@@ -1,7 +1,9 @@
 using UnityEngine;
 
-/// <summary>A dynamic, force/torque-limited hilt. Mouse delta is never applied to
-/// the rigidbody. Blade is an independent child whose scale controls ignition.</summary>
+/// <summary>
+/// Independently simulated 2D hilt. Held movement is a bounded XY force/torque
+/// servo, never transform parenting or cursor displacement.
+/// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 public sealed class WeaponPoseMotor : MonoBehaviour
 {
@@ -21,11 +23,11 @@ public sealed class WeaponPoseMotor : MonoBehaviour
     public float maxLinearSpeed = 12f;
     public bool preserveIgnitionOnDrop = true;
 
-    [Header("Weapon poses in degrees")]
-    public float idleElevation = 78f;
-    public float blockElevation = 18f;
-    public float windupElevation = 40f;
-    public float strikeElevation = 14f;
+    [Header("Weapon poses in degrees above the XY plane")]
+    [Range(0f, 90f)] public float idleElevation = 90f;
+    [Range(0f, 90f)] public float blockElevation = 18f;
+    [Range(0f, 90f)] public float windupElevation = 40f;
+    [Range(0f, 90f)] public float strikeElevation = 14f;
     public float windupTilt = 14f;
     public float strikeArc = 155f;
 
@@ -36,22 +38,27 @@ public sealed class WeaponPoseMotor : MonoBehaviour
     private bool motorEnabled = true;
     private Vector2 recoilPosition;
     private float recoilAngular;
+    private Collider2D hiltCollider;
 
     private void Awake()
     {
         HiltBody = GetComponent<Rigidbody2D>();
         HiltBody.gravityScale = 0f;
         HiltBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-        // The held hilt overlaps its owner at the default grip location.
-        // Exclude self-collisions so the weapon servo cannot push its own player.
-        Collider2D hiltCollider = GetComponent<Collider2D>();
+        hiltCollider = GetComponent<Collider2D>();
+        if (hiltCollider != null) hiltCollider.enabled = true;
+        if (transform.parent != null)
+            Debug.LogError("Lightsaber_Hilt must be an independent scene root. Run Tools > Sword IK > Apply XY Combat Fix.", this);
+
+        if (blade != null) blade.hiltTransform = transform;
         if (character != null)
         {
-            foreach (Collider2D ownerCollider in character.GetComponentsInChildren<Collider2D>(true))
+            foreach (Collider2D owner in character.GetComponentsInChildren<Collider2D>(true))
             {
-                if (hiltCollider != null) Physics2D.IgnoreCollision(ownerCollider, hiltCollider, true);
-                if (blade != null && blade.contactCollider != null)
-                    Physics2D.IgnoreCollision(ownerCollider, blade.contactCollider, true);
+                if (hiltCollider != null && owner != hiltCollider)
+                    Physics2D.IgnoreCollision(owner, hiltCollider, true);
+                if (blade != null && blade.contactCollider != null && owner != blade.contactCollider)
+                    Physics2D.IgnoreCollision(owner, blade.contactCollider, true);
             }
         }
     }
@@ -59,20 +66,22 @@ public sealed class WeaponPoseMotor : MonoBehaviour
     public void ToggleBlade() { if (blade != null) blade.SetActive(!blade.IsActive); }
     public void BeginStrike()
     {
-        if (blade != null && blade.contactSensor != null) blade.contactSensor.StartNewStrike();
+        if (blade != null && blade.contactSensor != null)
+            blade.contactSensor.StartNewStrike();
     }
 
-    public void SetMotorEnabled(bool enabled) { motorEnabled = enabled && !IsDropped; }
+    public void SetMotorEnabled(bool enabled) => motorEnabled = enabled && !IsDropped;
 
     public void Drop()
     {
         IsDropped = true;
         motorEnabled = false;
         if (!preserveIgnitionOnDrop && blade != null) blade.SetActive(false);
+        if (hiltCollider != null) hiltCollider.enabled = true;
         HiltBody.angularDamping = 2f;
-        HiltBody.AddForce((Vector2)transform.right * .35f, ForceMode2D.Impulse);
-        HiltBody.AddTorque(0.15f, ForceMode2D.Impulse);
         HiltBody.linearDamping = 2f;
+        HiltBody.AddForce((Vector2)transform.right * .35f, ForceMode2D.Impulse);
+        HiltBody.AddTorque(.15f, ForceMode2D.Impulse);
     }
 
     public bool TryPickup(float maximumRange)
@@ -85,8 +94,7 @@ public sealed class WeaponPoseMotor : MonoBehaviour
         motorEnabled = true;
         HiltBody.linearDamping = 4f;
         HiltBody.angularDamping = 4f;
-        // The finite servo retrieves the nearby hilt; pickup never teleports it.
-        return true;
+        return true; // Finite force-controlled retrieval; no teleport.
     }
 
     public void Pickup() { TryPickup(float.PositiveInfinity); }
@@ -94,7 +102,8 @@ public sealed class WeaponPoseMotor : MonoBehaviour
     public void AddRecoil(Vector2 direction, float impulse)
     {
         recoilPosition += Vector2.ClampMagnitude(direction * (impulse * .04f), .3f);
-        recoilAngular += Mathf.Clamp(impulse * 4.5f * Mathf.Sign(Vector2.SignedAngle(Vector2.up, direction)), -35f, 35f);
+        recoilAngular += Mathf.Clamp(impulse * 4.5f *
+            Mathf.Sign(Vector2.SignedAngle(Vector2.up, direction)), -35f, 35f);
     }
 
     public void AddRecoilAt(Vector2 contactPoint, Vector2 direction, float impulse)
@@ -110,11 +119,9 @@ public sealed class WeaponPoseMotor : MonoBehaviour
     {
         if (combat == null || character == null || HiltBody == null) return;
         float dt = Time.fixedDeltaTime;
-        recoilPosition = Vector2.MoveTowards(recoilPosition, Vector2.zero, dt * 1.0f);
+        recoilPosition = Vector2.MoveTowards(recoilPosition, Vector2.zero, dt);
         recoilAngular = Mathf.MoveTowards(recoilAngular, 0f, dt * 125f);
-        float side = combat.RestSide; // -1 left, +1 right
-        // While out of a combo, mouse-side stance selects the preferred grip;
-        // after a swing, keep the actual finishing side for a natural reversal.
+        float side = combat.RestSide;
         if (combat.Phase == SwordPhase.Neutral && combat.ComboCount == 0)
         {
             if (combat.Stance == SwordStance.Left) side = -1f;
@@ -147,15 +154,12 @@ public sealed class WeaponPoseMotor : MonoBehaviour
             case SwordPhase.Spring:
                 elevation = windupElevation;
                 localYaw = side * 97f;
-                hiltLocal = new Vector2(side * .34f,
-                    .25f + combat.SpringProgress * .15f);
+                hiltLocal = new Vector2(side * .34f, .25f + combat.SpringProgress * .15f);
                 tilt = -side * windupTilt;
                 break;
             case SwordPhase.Swing:
                 float t = combat.SwingProgress;
                 float smooth = t * t * (3f - 2f * t);
-                // Left side (-1) swings toward right (+1), and vice versa.
-                // The arc, force and phase duration are independent of mouse delta.
                 localYaw = side * (97f - strikeArc * smooth);
                 elevation = strikeElevation;
                 hiltLocal = new Vector2(Mathf.Lerp(side * .34f, -side * .34f, smooth),
@@ -165,18 +169,11 @@ public sealed class WeaponPoseMotor : MonoBehaviour
             case SwordPhase.Recovery:
                 elevation = Mathf.Lerp(strikeElevation, idleElevation,
                     Mathf.Clamp01(combat.PhaseTime / Mathf.Max(.01f, combat.recoverySeconds)));
-                localYaw = side * 67f;
                 hiltLocal = new Vector2(side * .22f, .32f);
                 break;
-            case SwordPhase.Parried:
-                elevation = strikeElevation;
-                break;
-            case SwordPhase.GuardBroken:
-                elevation = blockElevation;
-                break;
-            case SwordPhase.Dropped:
-                elevation = 8f;
-                break;
+            case SwordPhase.Parried: elevation = strikeElevation; break;
+            case SwordPhase.GuardBroken: elevation = blockElevation; break;
+            case SwordPhase.Dropped: elevation = 8f; break;
         }
         if (blade != null) blade.SetPose(elevation, tilt);
         if (!motorEnabled || IsDropped) return;

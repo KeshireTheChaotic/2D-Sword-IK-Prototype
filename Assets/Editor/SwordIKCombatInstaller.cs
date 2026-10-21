@@ -32,6 +32,7 @@ public static class SwordIKCombatInstaller
             if (!opened && scene.isDirty)
                 throw new InvalidOperationException("SampleScene has unsaved changes. Save or revert it before running the combat installer.");
             SwordIKChainRepair.ValidateScene(scene);
+            SwordIKXYSceneRepair.ApplyToScene(scene);
             GameObject player = FindRoot(scene, "Player");
             PlayerMovementController locomotion = Required<PlayerMovementController>(player);
             // Legacy SampleScene serialized turnSpeed = 4 degrees/frame.
@@ -71,6 +72,7 @@ public static class SwordIKCombatInstaller
                 collider.size = new Vector2(.13f, .28f);
                 collider.offset = new Vector2(0f, -.15f);
             }
+            hilt.GetComponent<Collider2D>().enabled = true;
             if (hilt.transform.position.sqrMagnitude < .000001f)
             {
                 hilt.transform.position = player.transform.TransformPoint(new Vector3(0f, .32f, 0f));
@@ -119,6 +121,8 @@ public static class SwordIKCombatInstaller
             motor.combat = combat;
             motor.sharedGrip = sharedGrip;
             motor.blade = blade;
+            motor.idleElevation = 90f;
+            blade.hiltTransform = hilt.transform;
             blade.core = core;
             blade.glow = glow;
             blade.visualPivot = visualPivot;
@@ -160,6 +164,8 @@ public static class SwordIKCombatInstaller
             EditorUtility.SetDirty(arms);
             EditorUtility.SetDirty(follower);
             EditorUtility.SetDirty(locomotion);
+            SwordIKXYSceneRepair.ApplyToScene(scene, true);
+            SwordIKXYSceneRepair.ValidateScene(scene);
             EditorSceneManager.MarkSceneDirty(scene);
             if (!EditorSceneManager.SaveScene(scene)) throw new InvalidOperationException("Could not save scene after combat installation");
             SwordIKCombatValidation.ValidateScene(scene);

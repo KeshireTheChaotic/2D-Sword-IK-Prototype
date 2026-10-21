@@ -27,6 +27,7 @@ public static class SwordIKCombatValidation
 
     public static void ValidateScene(Scene scene)
     {
+            SwordIKXYSceneRepair.ValidateScene(scene);
             GameObject player = scene.GetRootGameObjects().Single(x => x.name == "Player");
             GameObject hilt = scene.GetRootGameObjects().Single(x => x.name == "Lightsaber_Hilt");
             CombatStanceController stance = Require<CombatStanceController>(player);

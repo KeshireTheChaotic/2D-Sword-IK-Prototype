@@ -1,54 +1,39 @@
 using UnityEngine;
 
 /// <summary>
-/// Moves an IK hand target toward the combat hotspot nearest the mouse.
-/// Kept as a Transform-driven IK target (no Rigidbody2D required).
+/// Legacy hotspot follower. Disabled in the combat scene. Preserved for older
+/// scenes, with camera depth excluded from 2D hotspot selection.
 /// </summary>
 public class HandManager : MonoBehaviour
 {
     public Transform[] targets;
     public float speed = 1f;
-    public float minDistance = 0.05f;
+    public float minDistance = .05f;
 
     private void Update()
     {
-        Camera activeCamera = Camera.main;
-        if (activeCamera == null || targets == null || targets.Length == 0)
-            return;
-
-        Transform closest = GetClosestTarget(activeCamera);
-        if (closest == null)
-            return;
-
+        Camera camera = Camera.main;
+        if (camera == null || targets == null || targets.Length == 0) return;
+        Transform closest = GetClosestTarget(camera);
+        if (closest == null) return;
         Vector3 destination = closest.position;
         Vector3 current = transform.position;
-        if ((destination - current).sqrMagnitude <= minDistance * minDistance)
-            return;
-
-        // The original code moved toward a normalized direction vector,
-        // not the destination world position. This caused incorrect targeting.
+        destination.z = current.z;
+        if (((Vector2)(destination - current)).sqrMagnitude <= minDistance * minDistance) return;
         transform.position = Vector3.MoveTowards(current, destination, speed * Time.deltaTime);
     }
 
-    private Transform GetClosestTarget(Camera activeCamera)
+    private Transform GetClosestTarget(Camera camera)
     {
-        Vector3 mouse = activeCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mouse = camera.ScreenToWorldPoint(Input.mousePosition);
         Transform closest = null;
-        float bestDistance = float.PositiveInfinity;
-
-        foreach (Transform candidate in targets)
+        float best = float.PositiveInfinity;
+        foreach (Transform t in targets)
         {
-            if (candidate == null)
-                continue;
-
-            float distance = (candidate.position - mouse).sqrMagnitude;
-            if (distance < bestDistance)
-            {
-                bestDistance = distance;
-                closest = candidate;
-            }
+            if (t == null) continue;
+            float distance = ((Vector2)t.position - mouse).sqrMagnitude;
+            if (distance < best) { best = distance; closest = t; }
         }
-
         return closest;
     }
 }
